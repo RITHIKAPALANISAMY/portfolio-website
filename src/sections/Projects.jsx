@@ -28,6 +28,7 @@ const projects = [
   image: "/projects/portfolio.png",
   github:
     "https://github.com/RITHIKAPALANISAMY/portfolio-website",
+    live: "https://portfolio-website-pi-green-30.vercel.app",
   tech: [
     "React.js",
     "Tailwind CSS",
@@ -155,22 +156,43 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4 mt-8">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="
-                      bg-sky-500
-                      px-5
-                      py-2
-                      rounded-xl
-                      hover:bg-sky-600
-                      transition
-                    "
-                  >
-                    View Source Code
-                  </a>
-                </div>
+
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noreferrer"
+    className="
+      bg-sky-500
+      px-5
+      py-2
+      rounded-xl
+      hover:bg-sky-600
+      transition
+    "
+  >
+    Source Code
+  </a>
+
+  {project.live && (
+    <a
+      href={project.live}
+      target="_blank"
+      rel="noreferrer"
+      className="
+        border
+        border-sky-500
+        px-5
+        py-2
+        rounded-xl
+        hover:bg-sky-500
+        transition
+      "
+    >
+      Live Website
+    </a>
+  )}
+
+</div>
               </div>
             </div>
           ))}
