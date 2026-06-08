@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background: #020617;
+  color: white;
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text Selection */
+
+::selection {
+  background: #38bdf8;
+  color: #020617;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0ea5e9;
+}
+
+/* Animated Background Glow */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  width: 700px;
+  height: 700px;
+
+  top: -250px;
+  right: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(56, 189, 248, 0.18);
+
+  filter: blur(150px);
+
+  animation: floatBlue 12s ease-in-out infinite;
+
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 600px;
+  height: 600px;
+
+  bottom: -200px;
+  left: -200px;
+
+  border-radius: 50%;
+
+  background: rgba(139, 92, 246, 0.18);
+
+  filter: blur(150px);
+
+  animation: floatPurple 15s ease-in-out infinite;
+
+  z-index: -1;
+}
+
+@keyframes floatBlue {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-80px, 80px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatPurple {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(80px, -80px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Glass Effect */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Hover */
+
+.hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 10px 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Focus Styles */
+
+a:focus,
+button:focus {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
